@@ -1,0 +1,30 @@
+<div class="container ">
+    <h1 class="text-center">Escritores</h1>
+    <select class="form form-control " (change)="onChange($event)" style="margin-top: 20px;">
+        <option value="todos">Todos</option>
+        <option value="españa">España</option>
+        <option value="reino unido">Reino Unido</option>
+        <option value="chile">Chile</option>
+        <option value="canadá">Canada</option>
+    </select>
+
+    <!-- <div class="escritores">
+        <div class="escritor" *ngFor="let escritor of arrEscritores" [routerLink]="['/escritores',escritor.id]">
+            <h3>{{escritor.nombre}} {{escritor.apellidos}}</h3>
+            <img [src]="escritor.imagen" alt="">
+            <p>{{escritor.pais}}</p>
+        </div>
+    </div> -->
+    <div class="escritores">
+        <div class="card escritor" style="width:200px" *ngFor="let escritor of arrEscritores">
+            <img class="card-img-top" [src]="escritor.imagen" style="width:100%;height: 250px;">
+            <div class="card-body">
+                <h4 class="card-title text-center">{{escritor.nombre}} {{escritor.apellidos}}</h4>
+                <p class="card-text text-center " style="text-transform: uppercase;">{{escritor.pais}}</p>
+                <div class="d-grid gap-2">
+                    <a href="#" class="btn btn-primary stretched-link" [routerLink]="['/escritores',escritor.id]">Ver Detalle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
